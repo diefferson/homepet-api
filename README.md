@@ -1,29 +1,21 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+O Repositorio contem a estrutura básica do projeto,
 
-### What is this repository for? ###
+### Arquivos e diretórios necessários? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* app
+* public
+* src
+* .gitignore
+* .htaccess
+* composer.json
+* composer.lock
+* composer.phar
 
-### How do I get set up? ###
+### Como configurar? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Após clonar o projeto é necessário instalar as dependencias do composer
+* Para instalar as dependencias basta executar php composer.phar install
+* Cria uma basta cache e uma pasta log na raiz do projeto e depermissao de acesso global
+* Altere as configurações necessárias no arquivo app/setings.php

@@ -1,17 +1,13 @@
 {
-    "name": "diefferson/die-slim",
-    "description": "Basic structure for a Slim Framework project",
+    "name": "HomePet",
+    "description": "Sistema de Busca de hoteis para seu PET",
     "type": "project",
     "keywords": ["Slim", "mvc",  "Structure"],
-    "license": "MIT",
-    "version": "1.0.0",
-    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Diefferson Santos",
             "email": "diefferson.sts@gmail.com",
             "homepage": "https://github.com/diefferson",
-            "role": "Developer"
         }
     ],
     "autoload": {

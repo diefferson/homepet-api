@@ -1,4 +1,4 @@
-DirectoryIndex app.php
+DirectoryIndex app_dev.php
 
 <IfModule mod_negotiation.c>
     Options -MultiViews

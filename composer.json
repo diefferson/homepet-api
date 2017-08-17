@@ -7,7 +7,7 @@
         {
             "name": "Diefferson Santos",
             "email": "diefferson.sts@gmail.com",
-            "homepage": "https://github.com/diefferson",
+            "homepage": "https://github.com/diefferson"
         }
     ],
     "autoload": {
@@ -19,6 +19,7 @@
         "slim/slim": "^3.0",
         "slim/twig-view": "^2.0",
         "monolog/monolog": "^1.13",
-        "slim/pdo": "^1.10"
+        "slim/pdo": "^1.10",
+        "jms/serializer": "^1.8"
     }
 }

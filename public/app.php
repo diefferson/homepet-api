@@ -3,6 +3,8 @@ require __DIR__ . '/../vendor/autoload.php';
  
 $settings = require __DIR__ . '/../app/settings.php';
 
+define('URL_BASE', "");
+
 $app = new \Slim\App($settings);
 
 require __DIR__ . '/../app/container.php';

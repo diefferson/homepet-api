@@ -1,0 +1,72 @@
+<?php
+namespace Domain;
+
+/**
+ * @author - Diefferson Santos
+*/
+class Avaliacao{
+
+	private $codigoHotel;
+	private $codigoUsuario;
+	private $avaliacao;
+
+    /**
+     * @return mixed
+     */
+    public function getCodigoHotel()
+    {
+        return $this->codigoHotel;
+    }
+
+    /**
+     * @param mixed $codigoHotel
+     *
+     * @return self
+     */
+    public function setCodigoHotel($codigoHotel)
+    {
+        $this->codigoHotel = $codigoHotel;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCodigoUsuario()
+    {
+        return $this->codigoUsuario;
+    }
+
+    /**
+     * @param mixed $codigoUsuario
+     *
+     * @return self
+     */
+    public function setCodigoUsuario($codigoUsuario)
+    {
+        $this->codigoUsuario = $codigoUsuario;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvaliacao()
+    {
+        return $this->avaliacao;
+    }
+
+    /**
+     * @param mixed $avaliacao
+     *
+     * @return self
+     */
+    public function setAvaliacao($avaliacao)
+    {
+        $this->avaliacao = $avaliacao;
+
+        return $this;
+    }
+}

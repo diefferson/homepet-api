@@ -22,11 +22,11 @@ return [
 
         // db desenv settings
         'db'=>[
-            'dsn' => 'mysql:host=myhost;dbname=mydbname;charset=utf8',
-            'host'   => "myhost",
-            'user'   => "myuser",
-            'pass'   => "mypass",
-            'dbname' => "mydbname"
+            'dsn' => 'mysql:host=localhost;dbname=homepet_db;charset=utf8',
+            'host'   => "localhost",
+            'user'   => "root",
+            'pass'   => "root",
+            'dbname' => "homepet_db"
         ],    
     ],
 ];

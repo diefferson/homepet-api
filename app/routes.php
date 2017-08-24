@@ -2,4 +2,7 @@
 
 $app->get(URL_BASE."/", 'HomeController:index')->setName('homepage');
 
-$app->get(URL_BASE.'/hotel', 'HotelController:listaHoteis')->setName('listaHoteis');
+$app->get(URL_BASE.'/hoteis', 'HotelController:listaHoteis')
+	->setName('listaHoteis')
+	->add('JsonOutputMiddleware');
+

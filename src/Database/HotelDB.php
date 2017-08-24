@@ -14,7 +14,8 @@ class HotelDB extends DefaultDB{
 		$this->getConnection();
 		
 		$selectStatement = 	$this->pdo->select()
-		                       		  ->from(self::TB_HOTEL);
+		                       		  ->from(self::TB_HOTEL)
+		                       		  ->where("status", "=", "ATIVO");
 
 		$stmt = $selectStatement->execute();
 		$data = $stmt->fetchAll();

@@ -9,6 +9,7 @@ class Comentario{
 	private $codigoHotel;
 	private $codigoUsuario;
 	private $comentario;
+    private $data;
 
 
     /**
@@ -67,6 +68,26 @@ class Comentario{
     public function setComentario($comentario)
     {
         $this->comentario = $comentario;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param mixed $data
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
 
         return $this;
     }

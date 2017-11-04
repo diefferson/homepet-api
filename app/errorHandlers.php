@@ -7,7 +7,6 @@ $container['errorHandler'] = function ($c) {
         if( $c->settings['displayErrorDetails'] ) {
 
             $data = [
-              'code' => $exception->getCode(),
               'message' => $exception->getMessage(),
               'content' => null,
               'file' => $exception->getFile(),
@@ -16,13 +15,10 @@ $container['errorHandler'] = function ($c) {
             ];
 
         }else{
-
             $data = [
-              'code' => $exception->getCode(),
               'message' => $exception->getMessage(),
               'content' => null,
             ];
-
         }
 
         $response = $c->get('response')
@@ -30,7 +26,7 @@ $container['errorHandler'] = function ($c) {
         			  ->write(json_encode($data));
 
         if($exception instanceof Exception\ApiException ){
-           	$response = $response->withStatus((INT)$exception->getStatusCode());
+          $response = $response->withStatus((INT)$exception->getCode());
         }else{
         	$response = $response->withStatus(500);
         }

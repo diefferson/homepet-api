@@ -1,9 +1,16 @@
 <?php
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+date_default_timezone_set('America/Sao_Paulo');
+
 require __DIR__ . '/../vendor/autoload.php';
- 
+
 $settings = require __DIR__ . '/../app/settings.php';
 
-define('URL_BASE', "");
+define('URL_BASE', "/homepet");
 
 $app = new \Slim\App($settings);
 

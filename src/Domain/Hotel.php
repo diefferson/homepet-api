@@ -6,39 +6,48 @@ namespace Domain;
 */
 class Hotel{
 
-	private $codigo;
-	private $nome;
+	private $code;
+	private $name;
 	private $email;
-	private $senha;
-	private $endereco;
-	private $emailContato;
-	private $telefoneContato;
-	private $coordenadas;
+    private $price;
+	private $address;
+	private $contactEmail;
+	private $contactPhone;
+	private $coordenates;
 	private $cep;
-	private $cidade;
+	private $city;
 	private $uf;
 	private $status;
-    private $descricao;
-    private $urlImagemCapa;
-    private $imagens = array();
+    private $description;
+    private $coverImage;
+    private $rating;
+    private $ratingsNumber;
+    private $commentsNumber;
+    private $images;
+    private $services;
 
+    public function __construct(){
+        $this->rating = 0;
+        $this->ratingsNumber = 0;
+        $this->commentsNumber = 0;
+    }
 
     /**
      * @return mixed
      */
-    public function getCodigo()
+    public function getCode()
     {
-        return $this->codigo;
+        return $this->code;
     }
 
     /**
-     * @param mixed $codigo
+     * @param mixed $code
      *
      * @return self
      */
-    public function setCodigo($codigo)
+    public function setCode($code)
     {
-        $this->codigo = $codigo;
+        $this->code = $code;
 
         return $this;
     }
@@ -46,19 +55,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getNome()
+    public function getName()
     {
-        return $this->nome;
+        return $this->name;
     }
 
     /**
-     * @param mixed $nome
+     * @param mixed $name
      *
      * @return self
      */
-    public function setNome($nome)
+    public function setName($name)
     {
-        $this->nome = $nome;
+        $this->name = $name;
 
         return $this;
     }
@@ -86,19 +95,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getSenha()
+    public function getAddress()
     {
-        return $this->senha;
+        return $this->address;
     }
 
     /**
-     * @param mixed $senha
+     * @param mixed $address
      *
      * @return self
      */
-    public function setSenha($senha)
+    public function setAddress($address)
     {
-        $this->senha = $senha;
+        $this->address = $address;
 
         return $this;
     }
@@ -106,19 +115,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getEndereco()
+    public function getContactEmail()
     {
-        return $this->endereco;
+        return $this->contactEmail;
     }
 
     /**
-     * @param mixed $endereco
+     * @param mixed $contactEmail
      *
      * @return self
      */
-    public function setEndereco($endereco)
+    public function setContactEmail($contactEmail)
     {
-        $this->endereco = $endereco;
+        $this->contactEmail = $contactEmail;
 
         return $this;
     }
@@ -126,19 +135,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getEmailContato()
+    public function getContactPhone()
     {
-        return $this->emailContato;
+        return $this->contactPhone;
     }
 
     /**
-     * @param mixed $emailContato
+     * @param mixed $contactPhone
      *
      * @return self
      */
-    public function setEmailContato($emailContato)
+    public function setContactPhone($contactPhone)
     {
-        $this->emailContato = $emailContato;
+        $this->contactPhone = $contactPhone;
 
         return $this;
     }
@@ -146,39 +155,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getTelefoneContato()
+    public function getCoordinates()
     {
-        return $this->telefoneContato;
+        return $this->coordenates;
     }
 
     /**
-     * @param mixed $telefoneContato
+     * @param mixed $coordenates
      *
      * @return self
      */
-    public function setTelefoneContato($telefoneContato)
+    public function setCoordinates(Coordinate $coordenates)
     {
-        $this->telefoneContato = $telefoneContato;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCoordenadas()
-    {
-        return $this->coordenadas;
-    }
-
-    /**
-     * @param mixed $coordenadas
-     *
-     * @return self
-     */
-    public function setCoordenadas(Coordenada $coordenadas)
-    {
-        $this->coordenadas = $coordenadas;
+        $this->coordenates = $coordenates;
 
         return $this;
     }
@@ -206,19 +195,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getCidade()
+    public function getCity()
     {
-        return $this->cidade;
+        return $this->city;
     }
 
     /**
-     * @param mixed $cidade
+     * @param mixed $city
      *
      * @return self
      */
-    public function setCidade($cidade)
+    public function setCity($city)
     {
-        $this->cidade = $cidade;
+        $this->city = $city;
 
         return $this;
     }
@@ -266,19 +255,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getDescricao()
+    public function getDescription()
     {
-        return $this->descricao;
+        return $this->description;
     }
 
     /**
-     * @param mixed $descricao
+     * @param mixed $description
      *
      * @return self
      */
-    public function setDescricao($descricao)
+    public function setDescription($description)
     {
-        $this->descricao = $descricao;
+        $this->description = $description;
 
         return $this;
     }
@@ -286,19 +275,19 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getUrlImagemCapa()
+    public function getCoverImage()
     {
-        return $this->urlImagemCapa;
+        return $this->coverImage;
     }
 
     /**
-     * @param mixed $urlImagemCapa
+     * @param mixed $coverImage
      *
      * @return self
      */
-    public function setUrlImagemCapa($urlImagemCapa)
+    public function setCoverImage($coverImage)
     {
-        $this->urlImagemCapa = $urlImagemCapa;
+        $this->coverImage = $coverImage;
 
         return $this;
     }
@@ -306,20 +295,149 @@ class Hotel{
     /**
      * @return mixed
      */
-    public function getImagens()
+    public function getImages()
     {
-        return $this->imagens;
+        return $this->images;
     }
 
     /**
-     * @param mixed $imagens
+     * @param mixed $images
      *
      * @return self
      */
-    public function setImagens($imagens)
+    public function setImages($images)
     {
-        $this->imagens = $imagens;
+        $this->images = $images;
 
         return $this;
+    }
+
+    /**
+     * @param mixed $rating
+     *
+     * @return self
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRatingsNumber()
+    {
+        return $this->ratingsNumber;
+    }
+
+    /**
+     * @param mixed $ratingsNumber
+     *
+     * @return self
+     */
+    public function setRatingsNumber($ratingsNumber)
+    {
+        $this->ratingsNumber = $ratingsNumber;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentsNumber()
+    {
+        return $this->commentsNumber;
+    }
+
+    /**
+     * @param mixed $commentsNumber
+     *
+     * @return self
+     */
+    public function setCommentsNumber($commentsNumber)
+    {
+        $this->commentsNumber = $commentsNumber;
+
+        return $this;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+    /**
+     * @param mixed $services
+     *
+     * @return self
+     */
+    public function setServices($services)
+    {
+        $this->services = $services;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     *
+     * @return self
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+
+    public static function doHotel($date){
+
+        $hotel = new Hotel();
+
+        if($date['code_hotel']){ $hotel->setCode($date['code_hotel']); }
+        if($date['name']){ $hotel->setName($date['name']); }
+        if($date['address']){ $hotel->setAddress($date['address']); }
+        if($date['price']){ $hotel->setPrice($date['price']); }
+        if($date['contact_email']){ $hotel->setContactEmail($date['contact_email']); }
+        if($date['contact_phone']){ $hotel->setContactPhone($date['contact_phone']); }
+        if($date['cep']){ $hotel->setCep($date['cep']); }
+        if($date['city']){ $hotel->setCity($date['city']); }
+        if($date['uf']){ $hotel->setUf($date['uf']); }
+        if($date['status']){ $hotel->setStatus($date['status']); }
+        if($date['description']){ $hotel->setDescription($date['description']); }
+        if($date['cover_image']){ $hotel->setCoverImage($date['cover_image']); }
+        if($date['ratings']){ $hotel->setRatingsNumber($date['ratings']); }
+        if($date['rating']){ $hotel->setRating($date['rating']); }
+        if($date['comments']){ $hotel->setCommentsNumber($date['comments']); }
+        if($date['services']){ $hotel->setServices($date['services']); }
+
+        if($date['latitude'] && $date['longitude']){
+            $hotel->setCoordinates(new Coordinate($date['latitude'], $date['longitude']));
+        }
+
+        return $hotel;
     }
 }

@@ -4,39 +4,37 @@ namespace Domain;
 /**
  * @author - Diefferson Santos
 */
-class Usuario{
+class User{
 
-	private $codigo;
-	private $nome;
+	private $code;
+	private $name;
 	private $email;
-	private $senha;
-	private $endereco;
-	private $telefone;
-	private $urlImagemPerfil;
-	private $sexo;
-	private $dataNascimento;
+	private $address;
+	private $phone;
+	private $avatar;
+	private $sex;
+	private $birthday;
 	private $cep;
-    private $cidade;
+    private $city;
     private $uf;
     private $status;
 
-    
     /**
      * @return mixed
      */
-    public function getCodigo()
+    public function getCode()
     {
-        return $this->codigo;
+        return $this->code;
     }
 
     /**
-     * @param mixed $codigo
+     * @param mixed $code
      *
      * @return self
      */
-    public function setCodigo($codigo)
+    public function setCode($code)
     {
-        $this->codigo = $codigo;
+        $this->code = $code;
 
         return $this;
     }
@@ -44,19 +42,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getNome()
+    public function getName()
     {
-        return $this->nome;
+        return $this->name;
     }
 
     /**
-     * @param mixed $nome
+     * @param mixed $name
      *
      * @return self
      */
-    public function setNome($nome)
+    public function setName($name)
     {
-        $this->nome = $nome;
+        $this->name = $name;
 
         return $this;
     }
@@ -84,19 +82,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getSenha()
+    public function getAddress()
     {
-        return $this->senha;
+        return $this->address;
     }
 
     /**
-     * @param mixed $senha
+     * @param mixed $address
      *
      * @return self
      */
-    public function setSenha($senha)
+    public function setAddress($address)
     {
-        $this->senha = $senha;
+        $this->address = $address;
 
         return $this;
     }
@@ -104,19 +102,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getEndereco()
+    public function getPhone()
     {
-        return $this->endereco;
+        return $this->phone;
     }
 
     /**
-     * @param mixed $endereco
+     * @param mixed $phone
      *
      * @return self
      */
-    public function setEndereco($endereco)
+    public function setPhone($phone)
     {
-        $this->endereco = $endereco;
+        $this->phone = $phone;
 
         return $this;
     }
@@ -124,19 +122,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getTelefone()
+    public function getAvatar()
     {
-        return $this->telefone;
+        return $this->avatar;
     }
 
     /**
-     * @param mixed $telefone
+     * @param mixed $avatar
      *
      * @return self
      */
-    public function setTelefone($telefone)
+    public function setAvatar($avatar)
     {
-        $this->telefone = $telefone;
+        $this->avatar = $avatar;
 
         return $this;
     }
@@ -144,19 +142,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getUrlImagemPerfil()
+    public function getSex()
     {
-        return $this->urlImagemPerfil;
+        return $this->sex;
     }
 
     /**
-     * @param mixed $urlImagemPerfil
+     * @param mixed $sex
      *
      * @return self
      */
-    public function setUrlImagemPerfil($urlImagemPerfil)
+    public function setSex($sex)
     {
-        $this->urlImagemPerfil = $urlImagemPerfil;
+        $this->sex = $sex;
 
         return $this;
     }
@@ -164,39 +162,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getSexo()
+    public function getBirthday()
     {
-        return $this->sexo;
+        return $this->birthday;
     }
 
     /**
-     * @param mixed $sexo
+     * @param mixed $birthday
      *
      * @return self
      */
-    public function setSexo($sexo)
+    public function setBirthday($birthday)
     {
-        $this->sexo = $sexo;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDataNascimento()
-    {
-        return $this->dataNascimento;
-    }
-
-    /**
-     * @param mixed $dataNascimento
-     *
-     * @return self
-     */
-    public function setDataNascimento($dataNascimento)
-    {
-        $this->dataNascimento = $dataNascimento;
+        $this->birthday = $birthday;
 
         return $this;
     }
@@ -224,19 +202,19 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getCidade()
+    public function getCity()
     {
-        return $this->cidade;
+        return $this->city;
     }
 
     /**
-     * @param mixed $cidade
+     * @param mixed $city
      *
      * @return self
      */
-    public function setCidade($cidade)
+    public function setCity($city)
     {
-        $this->cidade = $cidade;
+        $this->city = $city;
 
         return $this;
     }
@@ -279,5 +257,25 @@ class Usuario{
         $this->status = $status;
 
         return $this;
+    }
+
+    public static function doUser($data){
+
+        $user = new User();
+
+        if($data['code_user']){ $user->setCode($data['code_user']); }
+        if($data['name']){ $user->setName($data['name']); }
+        if($data['email']){ $user->setEmail($data['email']); }
+        if($data['address']){ $user->setAddress($data['address']); }
+        if($data['phone']){ $user->setPhone($data['phone']); }
+        if($data['avatar']){ $user->setAvatar($data['avatar']); }
+        if($data['sex']){ $user->setSex($data['sex']); }
+        if($data['birthday']){ $user->setBirthday($data['birthday']); }
+        if($data['cep']){ $user->setCep($data['cep']); }
+        if($data['city']){ $user->setCity($data['city']); }
+        if($data['uf']){ $user->setUf($data['uf']); }
+        if($data['status']){ $user->setStatus($data['status']); }
+
+        return $user;
     }
 }

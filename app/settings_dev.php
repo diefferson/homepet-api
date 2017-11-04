@@ -27,6 +27,11 @@ return [
             'user'   => "root",
             'pass'   => "root",
             'dbname' => "homepet_db"
-        ],    
+        ], 
+
+        'OAuth' =>[
+            'public_key'  => file_get_contents('../key/pubkey.pem'),
+            'private_key' => file_get_contents('../key/privkey.pem'),
+        ],
     ],
 ];

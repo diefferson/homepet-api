@@ -51,6 +51,7 @@ $app->get(URL_BASE.'/user', 'UserController:getUser')
 $app->post(URL_BASE.'/user', 'UserController:updateUser')
 	->setName('updateUser')
 	->add('AuthenticationMiddleware')
+	->add('UserMiddleware')
 	->add('JsonOutputMiddleware');
 
 $app->patch(URL_BASE.'/user', 'UserController:patchUser')

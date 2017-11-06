@@ -62,7 +62,21 @@ class UserController extends Controller{
 
 	public function patchUser($request, $response, $args){
 
-		echo "patchUser";
+		$user = User::doUser($request->getParsedBody());
+
+		// $db = new UserDB($this);
+
+		// $user = $db->searchUserEmail($emailUser);
+
+		// if(!$user){
+		// 	throw new ApiException("Usuário não encontrado", 400);
+		// }
+
+		$responseApi = new ResponseApi( $user);
+
+        $response = $response->write( $responseApi->getResponse());
+
+        return $response;  
 
 	}
 

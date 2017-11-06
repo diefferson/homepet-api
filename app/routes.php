@@ -1,5 +1,4 @@
 <?php
-
 $app->post(URL_BASE.'/signup', 'UserController:signUp')
 	->setName('userRegister')
 	->add('SignUpMiddleware')
@@ -21,7 +20,7 @@ $app->get(URL_BASE.'/hotel/{code_hotel}', 'HotelController:getHotel')
 
 $app->get(URL_BASE.'/comment/{code_hotel}', 'HotelController:getComments')
 	->setName('getComments')
-	->add('HotelMiddleware'). 
+	->add('HotelMiddleware') 
 	->add('JsonOutputMiddleware');
 
 

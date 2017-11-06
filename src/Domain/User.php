@@ -264,6 +264,7 @@ class User{
         $user = new User();
 
         if($data['code_user']){ $user->setCode($data['code_user']); }
+        if($data['code']){ $user->setCode($data['code']); }
         if($data['name']){ $user->setName($data['name']); }
         if($data['email']){ $user->setEmail($data['email']); }
         if($data['address']){ $user->setAddress($data['address']); }

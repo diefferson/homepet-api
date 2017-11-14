@@ -56,28 +56,63 @@ class UserController extends Controller{
 
 	public function updateUser($request, $response, $args){
 
-		echo "updateUser";
-
-	}
-
-	public function patchUser($request, $response, $args){
-
 		$user = User::doUser($request->getParsedBody());
 
-		// $db = new UserDB($this);
+		$db = new UserDB($this);
 
-		// $user = $db->searchUserEmail($emailUser);
+		if (!$db->updateUser($user)) {
+			throw new Exception("Erro ao salvar usuário", 400);
+		}
 
-		// if(!$user){
-		// 	throw new ApiException("Usuário não encontrado", 400);
-		// }
+		$user = $db->searchUserEmail($postUser->getEmail());
 
-		$responseApi = new ResponseApi( $user);
+		$responseApi = new ResponseApi($user);
 
         $response = $response->write( $responseApi->getResponse());
 
         return $response;  
 
+	}
+
+	public function patchUser($request, $response, $args){
+
+		$db = new UserDB($this);
+
+		$postUser = User::doUser($request->getParsedBody());
+
+		$user = $db->searchUserEmail($postUser->getEmail());
+
+		if($postUser->getName()){
+			$user->setName($postUser->getName());
+		}
+
+		if($postUser->getAddress()){
+			$user->setAddress($postUser->getAddress());
+		}
+
+		if($postUser->getCity()){
+			$user->setCity($postUser->getCity());
+		}
+
+		if($postUser->getUf()){
+			$user->setUf($postUser->getUf());
+		}
+
+		if($postUser->getAvatar()){
+			$user->setAvatar($postUser->getAvatar());
+		}
+
+		if (!$db->updateUser($user)) {
+			throw new Exception("Erro ao salvar usuário", 400);
+		}
+
+		$user = $db->searchUserEmail($postUser->getEmail());
+
+		$responseApi = new ResponseApi($user);
+
+        $response = $response->write( $responseApi->getResponse());
+
+        return $response;  
 	}
 
 	public function deleteUser($request, $response, $args){

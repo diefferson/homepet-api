@@ -51,6 +51,33 @@ class UserDB extends DefaultDB{
 		return $user;
 	}
 
+	public function updateUser(User $user){
+
+		$this->getConnection();
+
+		$updateStatement = $this->pdo->update(
+									array(
+										'name' => $user->getName(),
+										'address' => $user->getAddress(),
+										'city' => $user->getCity(),
+										'uf' => $user->getUf(),
+										'avatar' => $user->getAvatar(),
+									)
+								)
+                       			->table("tb_user")
+                      			->where('code_user',"=", $user->getCode());
+
+        try{
+         	$updateStatement->execute();
+         	return true;
+        }catch(\Exception $e){
+        	$this->container->logger->warning("Erro ao atualizar usuario", [$e->getMessage()]);
+        	return false;
+        }finally{
+        	$this->closeConection();
+        }
+	}
+
 	public function signUp(User $user, $password){
 
 		$this->getConnection();

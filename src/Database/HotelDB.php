@@ -136,6 +136,7 @@ class HotelDB extends DefaultDB{
 	}
 
 	public function getCoordinates($codeHotel){
+		
 		$this->getConnection();
 		
 		$selectStatement = 	$this->pdo->select(array("latitude", "longitude"))

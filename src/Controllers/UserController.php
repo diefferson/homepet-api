@@ -90,6 +90,11 @@ class UserController extends Controller{
 			$user->setAddress($postUser->getAddress());
 		}
 
+
+		if($postUser->getPhone()){
+			$user->setPhone($postUser->getPhone());
+		}
+
 		if($postUser->getCity()){
 			$user->setCity($postUser->getCity());
 		}

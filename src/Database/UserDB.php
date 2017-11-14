@@ -59,6 +59,7 @@ class UserDB extends DefaultDB{
 									array(
 										'name' => $user->getName(),
 										'address' => $user->getAddress(),
+										'phone' => $user->getPhone(),
 										'city' => $user->getCity(),
 										'uf' => $user->getUf(),
 										'avatar' => $user->getAvatar(),

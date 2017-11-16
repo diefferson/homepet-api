@@ -1,17 +1,9 @@
 <?php
 
-/**
- * @SWG\Info(title="My First API", version="0.1")
- */
-
-/**
- * @SWG\Get(
- *     path="/api/resource.json",
- *     @SWG\Response(response="200", description="An example resource")
- * )
- */
 $app->get(URL_BASE."/", function($request, $response, $args){
-	echo "Hello World";
+	$swagger = \Swagger\scan('../src');
+	header('Content-Type: application/json');
+	echo $swagger;
 });
 
 $app->post(URL_BASE.'/signup', 'UserController:signUp')

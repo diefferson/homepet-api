@@ -20,6 +20,7 @@
         "monolog/monolog": "^1.13",
         "slim/pdo": "^1.10",
         "jms/serializer": "^1.8",
-        "bshaffer/oauth2-server-php": "^1.9"
+        "bshaffer/oauth2-server-php": "^1.9",
+        "zircote/swagger-php": "^2.0"
     }
 }

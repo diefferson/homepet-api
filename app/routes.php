@@ -30,7 +30,6 @@ $app->get(URL_BASE.'/comment/{code_hotel}', 'HotelController:getComments')
 	->add('HotelMiddleware') 
 	->add('JsonOutputMiddleware');
 
-
 $app->get(URL_BASE.'/coordinates/{code_hotel}', 'HotelController:getCoordinates')
 	->setName('getCoordinates')
 	->add('HotelMiddleware')

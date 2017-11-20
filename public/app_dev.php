@@ -16,7 +16,7 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $settings = require __DIR__ . '/../app/settings_dev.php';
 
-define("URL_BASE", "/homepet");
+define("URL_BASE", "");
 
 $app = new \Slim\App($settings);
 

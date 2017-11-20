@@ -8,6 +8,11 @@ use JMS\Serializer\SerializerBuilder;
 */
 class ResponseApi
 {
+    /**
+     * @var Integer - API response http code
+     * 
+    */
+    private $code;
 
 	/**
 	 * @var String - API response message
@@ -39,8 +44,8 @@ class ResponseApi
 	*/
 	private $content;
 
-	public function __construct($content = null, $message = "OK" ){
-
+	public function __construct($content = null, $message = "OK" , $code = 200){
+        $this->code       = $code;
 		$this->message 	  = $message;
 		$this->content 	  = $content;
 	}
@@ -54,6 +59,26 @@ class ResponseApi
         $response = $serializer->serialize($this, $format);
 
         return $response;
+    }
+
+    /**
+     * @return Integer - API response http code
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param Integer - API response http code $code
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
     }
 
     /**

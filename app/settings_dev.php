@@ -25,7 +25,7 @@ return [
             'dsn' => 'mysql:host=localhost;dbname=homepet;charset=utf8',
             'host'   => "localhost",
             'user'   => "root",
-            'pass'   => "c4rt40@transporte",
+            'pass'   => "root",
             'dbname' => "homepet"
         ], 
 

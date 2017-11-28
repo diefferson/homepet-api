@@ -1,11 +1,4 @@
 <?php
-
-$app->get(URL_BASE."/", function($request, $response, $args){
-	$swagger = \Swagger\scan('../src');
-	header('Content-Type: application/json');
-	echo $swagger;
-});
-
 $app->post(URL_BASE.'/signup', 'UserController:signUp')
 	->setName('userRegister')
 	->add('SignUpMiddleware')

@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	#usando localhost /homepet, em producao /
+
 	RewriteBase / 
 
 	RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
